@@ -63,7 +63,7 @@ export default {
   },
 
   mounted () {
-    // this.startTimer()
+    this.startTimer()
     document.addEventListener('keydown', this.keydown)
   },
 

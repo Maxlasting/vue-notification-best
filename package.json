@@ -1,6 +1,6 @@
 {
   "name": "vue-notification-best",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Vue全局通知组件",
   "main": "index.js",
   "scripts": {

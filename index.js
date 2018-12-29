@@ -15,6 +15,12 @@ function nextZIndex () {
   return ++max
 }
 
+function sleep (delay = 500) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, delay)
+  })
+}
+
 export default function install (Vue) {
   Vue.component(Notification.name, Notification)
 
@@ -23,13 +29,22 @@ export default function install (Vue) {
   let instance = null
   let instances = []
   let idx = 0
+  let sleepSeed = 0
 
-  const $notify = (options = {}) => {
+  const $notify = async (options = {}) => {
     if (Vue.prototype.$isServer) return
 
     const userOnClose = options.onClose
     const id = `fq-notification-${idx++}`
     const position = options.position || 'tr'
+    const delay = options.delay || 0
+
+    if (delay) {
+      sleepSeed++
+      await sleep(delay)
+    }
+
+    if (!sleepSeed) return
 
     options.onClose = function () {
       $notify.close(id, userOnClose)
@@ -39,9 +54,10 @@ export default function install (Vue) {
       data: options
     })
 
-    instance.id = id
+    instance._notification_id = id
     instance.$mount()
     document.body.appendChild(instance.$el)
+
     instance.visible = true
     instance.$el.style.zIndex = nextZIndex()
 
@@ -60,14 +76,14 @@ export default function install (Vue) {
 
     const len = instances.length
     const instance = instances.filter((item, i) => {
-      if (item.id === id) {
+      if (item._notification_id === id) {
         index = i
         return true
       }
       return false
     })[0]
 
-    if (!instance) return
+    if (!instance || instance.closeOnSleep) return
 
     if (typeof callback === 'function') callback(instance.$el)
 
@@ -92,6 +108,13 @@ export default function install (Vue) {
       return $notify(options)
     }
   })
+
+  $notify.closeAll = function () {
+    sleepSeed = 0
+    for (let i=instances.length-1; i>=0; i--) {
+      instances[i].close()
+    }
+  }
 
   Vue.prototype.$notify = $notify
 }
