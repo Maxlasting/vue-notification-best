@@ -1,0 +1,123 @@
+@font-face {
+  font-family: 'fq-iconfont';
+  src: url('./iconfont.woff') format('woff'),
+       url('./iconfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fq-notification {
+  width: 330px;
+  display: flex;
+  padding: 14px 26px 14px 13px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ebeef5;
+  position: fixed;
+  background-color: #fff;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s, transform 0.3s, left 0.3s, right 0.3s, top 0.4s, bottom 0.3s;
+  overflow: hidden;
+}
+
+.fq-notification.right {
+  right: 16px;
+}
+
+.fq-notification.left {
+  left: 16px;
+}
+
+.fq-notification .icon {
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+}
+
+.fq-notification .group {
+  margin-left: 14px;
+}
+
+.fq-notification .title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  margin: 0;
+}
+
+.fq-notification .content {
+  font-size: 14px;
+  line-height: 21px;
+  margin-top: 6px;
+}
+
+.fq-notification .content .message {
+  margin: 0;
+  color: #606266;
+  text-align: justify;
+}
+
+.fq-notification .close {
+  position: absolute;
+  right: 15px;
+  top: 18px;
+  cursor: pointer;
+  color: #999;
+  font-size: 16px;
+}
+
+.fq-notification .close:hover {
+  color: #606266;
+}
+
+.fq-notification-fade-enter.right {
+  right: 0;
+  transform: translateX(100%);
+}
+
+.fq-notification-fade-enter.left {
+  right: 0;
+  transform: translateX(-100%);
+}
+
+.fq-notification-fade-leave-active {
+  opacity: 0;
+}
+
+[class*=' fq-icon-'] {
+  font-family: 'fq-iconfont' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: baseline;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fq-icon-close:before {
+  content: "\e6e9";
+}
+
+.fq-icon-success:before {
+  content: "\e72d";
+  color: #67c23a;
+}
+
+.fq-icon-warning:before {
+  content: "\e73d";
+  color: #e6a23c;
+}
+
+.fq-icon-info:before {
+  content: "\e71b";
+  color: #909399;
+}
+
+.fq-icon-error:before {
+  content: "\e6f2";
+  color: #f56c6c;
+}

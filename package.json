@@ -1,0 +1,26 @@
+{
+  "name": "vue-notification-best",
+  "version": "1.0.0",
+  "description": "Vue全局通知组件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maxlasting/vue-notification-best.git"
+  },
+  "keywords": [
+    "Vue",
+    "Notify",
+    "Notification",
+    "Best",
+    "Fq"
+  ],
+  "author": "付强",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maxlasting/vue-notification-best/issues"
+  },
+  "homepage": "https://github.com/Maxlasting/vue-notification-best#readme"
+}
