@@ -59,13 +59,13 @@ $notify.info({...opts})
 $notify.closeAll()
 ```
 
-或者是手动关闭某个特定的通知消息，不过这么做的意义并不大，完全可以设置 duration 来自动控制
-注意，由于加入的延时功能使用的 Promise 来实现的，所有想得到实例的返回值需要加上 await：
+或者是手动关闭某个特定的通知消息，不过这么做的意义并不大，完全可以设置 duration 来自动控制，
+注意，由于加入的延时功能是使用的 Promise 来实现的，所有想得到实例的返回值需要加上 await：
 
 ```
 {
   methods: {
-    await handleClick () {
+    async handleClick () {
       const retNotify = await $notify.success({...opts})
 
       setTimeout(retNotify.close, 2000)
@@ -107,7 +107,7 @@ export default {
 
 ## 在线 DEMO
 
-等插件完善之后，逐步上线
+等插件完善之后，会逐步上线
 
 
 ## 更新日志
@@ -130,3 +130,5 @@ export default {
   - 修复延时功能的 bug
   - 修复 esc 不能关闭通知的 bug
   - 增加 直接 import 的使用方式
+
+1.2.1 - 修改README一些错别字
