@@ -99,7 +99,7 @@ export default {
     },
 
     keydown (e) {
-      if (e.keycode === 27) {
+      if (e.keyCode === 27) {
         this.close()
       }
     }

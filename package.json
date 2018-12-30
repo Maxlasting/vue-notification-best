@@ -1,6 +1,6 @@
 {
   "name": "vue-notification-best",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Vue全局通知组件",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,8 @@
     "Notify",
     "Notification",
     "Best",
-    "Fq"
+    "Fq",
+    "UI"
   ],
   "author": "付强",
   "license": "ISC",
