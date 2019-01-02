@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'fq-iconfont';
-  src: url('./iconfont.woff') format('woff'),
-       url('./iconfont.ttf') format('truetype');
+  src: url('./notification.woff') format('woff'),
+       url('./notification.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

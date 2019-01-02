@@ -36,7 +36,7 @@ import { $notify } from 'vue-notification-best'
 3. showClose: 是否显示关闭按钮 默认为 true
 4. duration: 设置多久后自动关闭，如果设置为 0 则不关闭，默认 3000ms
 5. delay: 延迟多久显示，默认不延迟
-6. position: 设置显示的为止，默认为 tr -> top right，可以设置为 tl tr bl br 4种位置
+6. position: 设置显示的位置，默认为 tr -> top right，可以设置为 tl tr bl br 4种位置
 
 
 ## 常用展示方法
@@ -60,7 +60,7 @@ $notify.closeAll()
 ```
 
 或者是手动关闭某个特定的通知消息，不过这么做的意义并不大，完全可以设置 duration 来自动控制，
-注意，由于加入的延时功能是使用的 Promise 来实现的，所有想得到实例的返回值需要加上 await：
+注意，由于加入的延时功能是使用 Promise 来实现的，所以想得到实例的返回值需要加上 await：
 
 ```
 {
@@ -118,7 +118,7 @@ export default {
 
 1.0.1 - 更新README案例
 
-1.1.0 
+1.1.0
   - 添加关闭所有功能
   - 添加延迟功能
   - 修复不能自动关闭的问题（原因是测试代码的时候，自动关闭被注释了）
@@ -132,3 +132,9 @@ export default {
   - 增加 直接 import 的使用方式
 
 1.2.1 - 修改README一些错别字
+
+
+2019年01月02日更新
+
+1.2.2
+  - 优化文件名、修改错别字
