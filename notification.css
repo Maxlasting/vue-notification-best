@@ -1,12 +1,12 @@
 @font-face {
   font-family: 'fq-iconfont';
   src: url('./notification.woff') format('woff'),
-       url('./notification.ttf') format('truetype');
+       url('./notification.ttf');
   font-weight: normal;
   font-style: normal;
 }
 
-.fq-notification {
+.best-notification {
   width: 330px;
   display: flex;
   padding: 14px 26px 14px 13px;
@@ -20,44 +20,44 @@
   overflow: hidden;
 }
 
-.fq-notification.right {
+.best-notification.right {
   right: 16px;
 }
 
-.fq-notification.left {
+.best-notification.left {
   left: 16px;
 }
 
-.fq-notification .icon {
+.best-notification .icon {
   width: 30px;
   height: 30px;
   font-size: 30px;
 }
 
-.fq-notification .group {
+.best-notification .group {
   margin-left: 14px;
 }
 
-.fq-notification .title {
+.best-notification .title {
   font-size: 16px;
   font-weight: bold;
   color: #000;
   margin: 0;
 }
 
-.fq-notification .content {
+.best-notification .content {
   font-size: 14px;
   line-height: 21px;
   margin-top: 6px;
 }
 
-.fq-notification .content .message {
+.best-notification .content .message {
   margin: 0;
   color: #606266;
   text-align: justify;
 }
 
-.fq-notification .close {
+.best-notification .close {
   position: absolute;
   right: 15px;
   top: 18px;
@@ -66,25 +66,25 @@
   font-size: 16px;
 }
 
-.fq-notification .close:hover {
+.best-notification .close:hover {
   color: #606266;
 }
 
-.fq-notification-fade-enter.right {
+.best-notification-fade-enter.right {
   right: 0;
   transform: translateX(100%);
 }
 
-.fq-notification-fade-enter.left {
+.best-notification-fade-enter.left {
   right: 0;
   transform: translateX(-100%);
 }
 
-.fq-notification-fade-leave-active {
+.best-notification-fade-leave-active {
   opacity: 0;
 }
 
-[class*=' fq-icon-'] {
+[class*=' best-icon-'] {
   font-family: 'fq-iconfont' !important;
   speak: none;
   font-style: normal;
@@ -98,26 +98,26 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.fq-icon-close:before {
+.best-icon-close:before {
   content: "\e6e9";
 }
 
-.fq-icon-success:before {
+.best-icon-success:before {
   content: "\e72d";
   color: #67c23a;
 }
 
-.fq-icon-warning:before {
+.best-icon-warning:before {
   content: "\e73d";
   color: #e6a23c;
 }
 
-.fq-icon-info:before {
+.best-icon-info:before {
   content: "\e71b";
   color: #909399;
 }
 
-.fq-icon-error:before {
+.best-icon-error:before {
   content: "\e6f2";
   color: #f56c6c;
 }

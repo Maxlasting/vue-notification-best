@@ -1,7 +1,7 @@
 <template>
-  <transition name="fq-notification-fade" @after-leave="destroyElement">
+  <transition name="best-notification-fade" @after-leave="destroyElement">
     <div
-      :class="['fq-notification', horizontalClass]"
+      :class="['best-notification', horizontalClass]"
       :style="positionStyle"
       v-show="visible"
       @click="click"
@@ -13,7 +13,7 @@
           <p class="message">{{ message }}</p>
         </div>
       </div>
-      <div class="close fq-icon-close" v-if="showClose" @click.stop="close" />
+      <div class="close best-icon-close" v-if="showClose" @click.stop="close" />
     </div>
   </transition>
 </template>
@@ -24,7 +24,7 @@ const typesData = {
 }
 
 export default {
-  name: 'FQNotification',
+  name: 'BestNotification',
 
   data () {
     return {
@@ -38,7 +38,7 @@ export default {
       showClose: true,
       onClose: null,
       onClick: null,
-      position: 'tr'
+      position: 'topRight'
     }
   },
 
@@ -48,11 +48,11 @@ export default {
     },
 
     horizontalClass () {
-      return this.position[1] === 'r' ? 'right' : 'left'
+      return this.position.toLowerCase().indexOf('right') > -1 ? 'right' : 'left'
     },
 
     verticalProperty () {
-      return this.position[0] === 't' ? 'top' : 'bottom'
+      return this.position.toLowerCase().indexOf('top') > -1 ? 'top' : 'bottom'
     },
 
     positionStyle () {

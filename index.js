@@ -13,7 +13,7 @@ function nextZIndex () {
     }
   })
 
-  return ++max
+  return 2000 + (++max)
 }
 
 function sleep (delay = 500) {
@@ -34,7 +34,7 @@ const $notify = async (options = {}) => {
 
   const userOnClose = options.onClose
   const id = `fq-notification-${idx++}`
-  const position = options.position || 'tr'
+  const position = options.position || 'topRight'
   const delay = options.delay || 0
 
   if (!!delay) {
@@ -59,12 +59,14 @@ const $notify = async (options = {}) => {
   instance.visible = true
   instance.$el.style.zIndex = nextZIndex()
 
-  let verticalOffset = 0
-  instances.filter(_ => _.position === position).forEach(item => (verticalOffset += item.$el.offsetHeight + 16))
-  verticalOffset += 16
-
-  instance.verticalOffset = verticalOffset
   instances.push(instance)
+
+  let verticalOffset = 0
+
+  instances.filter(_ => _.position === position).forEach(item => {
+    verticalOffset += item.$el.offsetHeight + 16
+    instance.verticalOffset = verticalOffset
+  })
 
   return instance
 }

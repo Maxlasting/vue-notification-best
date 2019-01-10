@@ -36,7 +36,7 @@ import { $notify } from 'vue-notification-best'
 3. showClose: 是否显示关闭按钮 默认为 true
 4. duration: 设置多久后自动关闭，如果设置为 0 则不关闭，默认 3000ms
 5. delay: 延迟多久显示，默认不延迟
-6. position: 设置显示的位置，默认为 tr -> top right，可以设置为 tl tr bl br 4种位置
+6. position: 设置显示的位置，默认为 topLeft，可以设置为 topLeft topRight bottomLeft bottomRight 4种位置
 
 
 ## 常用展示方法
@@ -138,3 +138,10 @@ export default {
 
 1.2.2
   - 优化文件名、修改错别字
+
+
+2019年02月10日更新
+
+1.3.0
+  - 修改位置配置项 tl -> topLeft，看起来更友好
+  - 其他细节优化
